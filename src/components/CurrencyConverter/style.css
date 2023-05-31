@@ -1,0 +1,8 @@
+.card {
+    padding: 20px!important;
+}
+
+.card-content-field {
+    margin: 10px;
+    min-width: 130px;
+}
