@@ -36,10 +36,10 @@
   "resolved" "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz"
   "version" "1.4.15"
 
-"@mdi/font@7.0.96":
-  "integrity" "sha512-rzlxTfR64hqY8yiBzDjmANfcd8rv+T5C0Yedv/TWk2QyAQYdc66e0kaN1ipmnYU3RukHRTRcBARHzzm+tIhL7w=="
-  "resolved" "https://registry.npmjs.org/@mdi/font/-/font-7.0.96.tgz"
-  "version" "7.0.96"
+"@mdi/font@^7.2.96":
+  "integrity" "sha512-e//lmkmpFUMZKhmCY9zdjRe4zNXfbOIJnn6xveHbaV2kSw5aJ5dLXUxcRt1Gxfi7ZYpFLUWlkG2MGSFAiqAu7w=="
+  "resolved" "https://registry.npmjs.org/@mdi/font/-/font-7.2.96.tgz"
+  "version" "7.2.96"
 
 "@mdi/js@^7.2.96":
   "integrity" "sha512-paR9M9ZT7rKbh2boksNUynuSZMHhqRYnEZOm/KrZTjQ4/FzyhjLHuvw/8XYzP+E7fS4+/Ms/82EN1pl/OFsiIA=="
@@ -360,6 +360,11 @@
   dependencies:
     "semver" "^6.0.0"
 
+"material-design-icons-iconfont@^6.7.0":
+  "integrity" "sha512-lSj71DgVv20kO0kGbs42icDzbRot61gEDBLQACzkUuznRQBUYmbxzEkGU6dNBb5fRWHMaScYlAXX96HQ4/cJWA=="
+  "resolved" "https://registry.npmjs.org/material-design-icons-iconfont/-/material-design-icons-iconfont-6.7.0.tgz"
+  "version" "6.7.0"
+
 "mime-db@1.52.0":
   "integrity" "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg=="
   "resolved" "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz"
@@ -537,9 +542,9 @@
     "@vue/shared" "3.3.4"
 
 "vuetify@^3.0.0-beta.4", "vuetify@^3.3.2":
-  "integrity" "sha512-m/R42di8FlyMaoktUe6k8JbF+A0vbJMpjQrZK7nH1ptK8VinVVQcaw+9m94wlO74IMR+LubxLh5t9I2ZtVCvjw=="
-  "resolved" "https://registry.npmjs.org/vuetify/-/vuetify-3.3.2.tgz"
-  "version" "3.3.2"
+  "integrity" "sha512-9QHh3mY5dK2Y4FGGBHFaIl/RVoP3Wg+XzP/pvruAoglIsUqzMlHrUOYAjO6/SWTxmhsiPI1jl4TyEBlppMXtNQ=="
+  "resolved" "https://registry.npmjs.org/vuetify/-/vuetify-3.3.6.tgz"
+  "version" "3.3.6"
 
 "webfontloader@^1.0.0":
   "integrity" "sha512-Egb0oFEga6f+nSgasH3E0M405Pzn6y3/9tOVanv/DLfa1YBIgcv90L18YyWnvXkRbIM17v5Kv6IT2N6g1x5tvQ=="
