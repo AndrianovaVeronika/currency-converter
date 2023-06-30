@@ -27,16 +27,7 @@ export default {
   },
   methods: {
     switchTheme(): never {
-      switch (this.theme) {
-        case "light":
-          this.theme = "dark";
-          break;
-        case "dark":
-          this.theme = "light";
-          break;
-        default:
-          break;
-      }
+      this.theme = this.theme === "light" ? "dark" : "light";
     },
   }
 };
