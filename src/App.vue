@@ -4,6 +4,7 @@
       <v-main>
         <v-container>
           <v-btn @click="switchTheme" icon="mdi-theme-light-dark" variant="text"/>
+          <v-btn @click="$i18n.locale = $i18n.locale === 'en' ? 'de' : 'en';" icon="mdi-translate" variant="text"/>
           <CurrencyConverter/>
         </v-container>
       </v-main>
@@ -11,9 +12,8 @@
   </v-theme-provider>
 </template>
 
-<script>
+<script lang="ts">
 import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter.vue';
-// import { useTheme } from 'vuetify'
 
 export default {
   components: {
@@ -21,12 +21,12 @@ export default {
   },
   data() {
     return {
-      theme: "light"
+      theme: "light",
+      language: ""
     }
   },
   methods: {
-    switchTheme() {
-      // this.theme.global.name.value = this.theme.global.current.value.dark ? 'light' : 'dark'
+    switchTheme(): never {
       switch (this.theme) {
         case "light":
           this.theme = "dark";
@@ -37,7 +37,7 @@ export default {
         default:
           break;
       }
-    }
+    },
   }
 };
 </script>

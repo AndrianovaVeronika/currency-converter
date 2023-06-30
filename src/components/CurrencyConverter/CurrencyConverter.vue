@@ -2,20 +2,20 @@
   <v-container>
     <v-card class="d-inline-flex flex-column card">
       <v-card-title>
-        <h2>Currency Converter</h2>
+        <h2>{{$t('currencyConverter.title')}}</h2>
       </v-card-title>
       <div class="d-flex flex-column align-center">
         <div class="d-flex flex-row">
           <v-text-field
             v-model="inputAmount"
-            label="Amount"
+            :label="$t('currencyConverter.inputFieldTitle')"
             class="card-content-field"
             type="number"
           />
           <v-select
             v-model="convertFrom"
             :items="currencies"
-            label="From"
+            :label="$t('currencyConverter.fromCurrencySelectTitle')"
             class="card-content-field"
           />
         </div>
@@ -23,7 +23,7 @@
         <div class="d-flex flex-row">
           <v-text-field
             v-model="resultAmount"
-            label="Result"
+            :label="$t('currencyConverter.outputFieldTitle')"
             readonly
             class="card-content-field"
             type="number"
@@ -31,7 +31,7 @@
           <v-select
             v-model="convertTo"
             :items="currencies"
-            label="To"
+            :label="$t('currencyConverter.toCurrencySelectTitle')"
             class="card-content-field"
           />
         </div>

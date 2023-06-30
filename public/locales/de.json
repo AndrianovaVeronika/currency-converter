@@ -1,0 +1,9 @@
+{
+  "currencyConverter": {
+    "title": "Währungsrechner",
+    "inputFieldTitle": "Betrag",
+    "outputFieldTitle": "Ergebnis",
+    "fromCurrencySelectTitle": "Von",
+    "toCurrencySelectTitle": "Zu"
+  }
+}
