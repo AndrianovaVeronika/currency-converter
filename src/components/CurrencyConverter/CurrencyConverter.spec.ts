@@ -26,6 +26,7 @@ describe('CurrencyConverter', () => {
 
   it('updates the resultAmount when inputAmount changes', async () => {
     wrapper.setData({inputAmount: 10});
+    //one tick is not enough
     await wrapper.vm.$nextTick();
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.$data.resultAmount).toBeGreaterThan(0);
