@@ -2,7 +2,7 @@
   <v-container>
     <v-card class="d-inline-flex flex-column card">
       <v-card-title>
-        <h2>{{$t('currencyConverter.title')}}</h2>
+        <h2>{{ $t('currencyConverter.title') }}</h2>
       </v-card-title>
       <div class="d-flex flex-column align-center">
         <div class="d-flex flex-row">
@@ -79,7 +79,7 @@ export default defineComponent({
           throw new Error('Invalid currency selected.');
         }
       } catch (error) {
-        console.error(error);
+        return Number.MIN_VALUE;
       }
     },
     swapCurrencies() {

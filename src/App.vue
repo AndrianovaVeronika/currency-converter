@@ -3,8 +3,8 @@
     <v-app>
       <v-main>
         <v-container>
-          <v-btn @click="switchTheme" icon="mdi-theme-light-dark" variant="text"/>
-          <v-btn @click="$i18n.locale = $i18n.locale === 'en' ? 'de' : 'en';" icon="mdi-translate" variant="text"/>
+          <v-btn id="themeSwitchBtn" @click="switchTheme" icon="mdi-theme-light-dark" variant="text"/>
+          <v-btn id="languageSwitchBtn" @click="$i18n.locale = $i18n.locale === 'en' ? 'de' : 'en';" icon="mdi-translate" variant="text"/>
           <CurrencyConverter/>
         </v-container>
       </v-main>
@@ -21,8 +21,7 @@ export default {
   },
   data() {
     return {
-      theme: "light",
-      language: ""
+      theme: "light"
     }
   },
   methods: {

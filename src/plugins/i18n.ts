@@ -1,6 +1,6 @@
 import {createI18n} from "vue-i18n";
-import de from "../../public/locales/de.json";
-import en from "../../public/locales/en.json";
+import de from "../locales/de.json";
+import en from "../locales/en.json";
 
 const i18n = createI18n({
   locale: "en",
