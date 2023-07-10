@@ -41,33 +41,19 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref, watch} from 'vue';
 import axios from 'axios';
 
 export default defineComponent({
-  data() {
-    return {
-      inputAmount: 0,
-      resultAmount: 0,
-      convertFrom: 'USD',
-      convertTo: 'EUR',
-      currencies: ['USD', 'EUR', 'GBP', 'JPY'], // Add more currencies as needed
-    };
-  },
-  watch: {
-    async inputAmount(newInputAmount) {
-      if (!newInputAmount) this.inputAmount = 0;
-      this.resultAmount = await this.convert(newInputAmount, this.convertFrom, this.convertTo);
-    },
-    async convertFrom(newConvertFrom) {
-      this.resultAmount = await this.convert(this.inputAmount, newConvertFrom, this.convertTo);
-    },
-    async convertTo(newConvertTo) {
-      this.resultAmount = await this.convert(this.inputAmount, this.convertFrom, newConvertTo);
-    }
-  },
-  methods: {
-    async convert(amount: number, fromCurrency: string, toCurrency: string): number {
+  setup() {
+    const inputAmount = ref(0);
+    const resultAmount = ref(0);
+    const convertFrom = ref('USD');
+    const convertTo = ref('EUR');
+    const currencies = ['USD', 'EUR', 'GBP', 'JPY'];
+
+    async function convert(amount: number, fromCurrency: string, toCurrency: string): number {
+      console.log('convert invoked')
       try {
         const response = await axios.get(
           `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
@@ -81,13 +67,42 @@ export default defineComponent({
       } catch (error) {
         return Number.MIN_VALUE;
       }
-    },
-    swapCurrencies() {
-      const temp = this.convertFrom;
-      this.convertFrom = this.convertTo;
-      this.convertTo = temp;
     }
+
+    function swapCurrencies() {
+      const temp = convertFrom.value;
+      convertFrom.value = convertTo.value;
+      convertTo.value = temp;
+    }
+
+    watch([inputAmount, convertFrom, convertTo], async ([newInputAmount, newConvertFrom, newConvertTo]) => {
+      if (!newInputAmount) {
+        inputAmount.value = 0
+      }
+      resultAmount.value = await convert(newInputAmount, newConvertFrom, newConvertTo);
+    });
+
+    return {
+      inputAmount,
+      resultAmount,
+      convertFrom,
+      convertTo,
+      currencies,
+      swapCurrencies,
+    };
   },
+  // watch: {
+  //   async inputAmount(newInputAmount) {
+  //     if (!newInputAmount) this.inputAmount = 0;
+  //     this.resultAmount = await this.convert(newInputAmount, this.convertFrom, this.convertTo);
+  //   },
+  //   async convertFrom(newConvertFrom) {
+  //     this.resultAmount = await this.convert(this.inputAmount, newConvertFrom, this.convertTo);
+  //   },
+  //   async convertTo(newConvertTo) {
+  //     this.resultAmount = await this.convert(this.inputAmount, this.convertFrom, newConvertTo);
+  //   }
+  // },
 });
 </script>
 
